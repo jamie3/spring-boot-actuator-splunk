@@ -40,7 +40,7 @@ Add the following to your Spring Boot `application.properties` file, or just mak
 via System property.
 
 ```
-# Port of the service in which the 
+# Port of the actuator endpoint
 server.port=8080
 
 # Time between polling the actuator endpoint
