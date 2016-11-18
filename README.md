@@ -22,13 +22,17 @@ Maven:
 
 Gradle:
 
-`compile ('org.springframework.boot:spring-boot-actuator-splunk:1.4.1.RELEASE')`
+```
+compile ('org.springframework.boot:spring-boot-actuator-splunk:1.4.1.RELEASE')
+```
 
 If you are using a newer (or older) version of Spring Boot just modify the version in the `build.gradle` file and re-build.
 
 ## Build
 
-`gradlew build`
+```
+gradlew build
+```
 
 ## Configuration
 
@@ -59,6 +63,26 @@ springboot.actuator.splunk.authorization=Splunk AA-BB-CC-DD
 
 
 ```
+    
+## Troubleshooting
+    
+When the service starts you should see the following in the log `Spring Boot Actuator Splunk enabled`
+
+If you application is not annotated with `@SpringBootApplication` then you will need to add `@ComponentScan("com.springframework.boot.actuator.splunk")`.
+
+
+```
+@EnableAutoConfiguration
+@ComponentScan("com.myapplication")
+@ComponentScan("org.springframework.boot.actuator.splunk")
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
     
 ## Limitations
 
