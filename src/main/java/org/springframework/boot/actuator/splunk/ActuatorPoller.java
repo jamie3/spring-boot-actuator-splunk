@@ -55,7 +55,7 @@ public class ActuatorPoller {
                 while (thread != null) {
 
                     try {
-                        Thread.sleep(10000L);
+                        Thread.sleep(poll);
                     } catch (InterruptedException e) {
                         break;
                     }
